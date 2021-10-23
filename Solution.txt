@@ -1,0 +1,25 @@
+k = int(input())
+class newone:
+    count1 = 0
+    count2 = 0
+    def main(self, args) :
+        sc =  "Python-inputs"
+        
+        self.recur("", k)
+        #print(self.count1)
+        print(str(self.count2) + "/" + str(self.count1))
+    def recur(self, str,  i):
+        if (i < 0):
+            if (str[len(str) - 1] == 'A'):
+                self.count2 += 1
+            self.count1 += 1
+            return
+        if (len(str) > 0) :
+            if (len(str) >= 3 and not str[len(str) - 3:len(str)]=="AAA"): 
+                self.recur(str + "A", i - 1)
+            elif (len(str) < 3) :
+                self.recur(str + "A", i - 1)
+        self.recur(str + "P", i - 1)
+        
+n = newone()
+n.main(k)
